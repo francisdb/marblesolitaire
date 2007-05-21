@@ -22,7 +22,7 @@ public class SolitairePanel extends JPanel{
     
     private Speelveld speelVeld;
     
-    private boolean bezig;
+    private boolean playing;
     private int score;
     private AudioClip sounds[];
     
@@ -30,7 +30,7 @@ public class SolitairePanel extends JPanel{
         speelVeld = new Speelveld();
         initGUI();
         LoadStuff();
-        bezig =false;
+        playing =false;
         score=0;
     }
     
@@ -57,7 +57,7 @@ public class SolitairePanel extends JPanel{
         addKeyListener(
                 new KeyAdapter(){
             public void keyReleased(KeyEvent e){
-                if (bezig){
+                if (playing){
                     doKey(e);
                 }
             }
@@ -65,7 +65,7 @@ public class SolitairePanel extends JPanel{
         addMouseListener(
                 new MouseAdapter(){
             public void mouseClicked(MouseEvent e){
-                if (bezig){
+                if (playing){
                     doMouseClick(e);
                 }
             }
@@ -73,7 +73,7 @@ public class SolitairePanel extends JPanel{
         addMouseMotionListener(
                 new MouseMotionAdapter(){
             public void mouseMoved(MouseEvent e){
-                if (bezig){
+                if (playing){
                     doMouseMove(e);
                 }
             }
@@ -99,7 +99,6 @@ public class SolitairePanel extends JPanel{
      * @param e 
      */
     public void doMouseClick(MouseEvent e){
-        System.out.println(e.getClickCount());
         speelVeld.doMouseClick(e);
         repaint();
         if(speelVeld.checkGameOver()){
@@ -111,7 +110,7 @@ public class SolitairePanel extends JPanel{
     public void gameOver(){
         score= speelVeld.checkBallsLeft();
         System.out.println("GAME OVER -> " + score + " balls left!");
-        bezig=false;
+        playing=false;
     }
     
     
@@ -119,7 +118,7 @@ public class SolitairePanel extends JPanel{
         speelVeld.reset();
         repaint();
         System.out.println("New game started...");
-        bezig=true;
+        playing=true;
     }
     
     public void paintComponent(Graphics g){
