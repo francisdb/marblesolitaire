@@ -54,7 +54,7 @@
                                 <manifest>
                                     <addClasspath>true</addClasspath>
                                     <classpathPrefix>lib</classpathPrefix>
-                                    <mainClass>eu.somatik.glossitope.marblesolitare.MarbleSolitaireDesklet</mainClass>
+                                    <mainClass>eu.somatik.glossitope.marblesolitaire.MarbleSolitaireDesklet</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
