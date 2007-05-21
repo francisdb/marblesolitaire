@@ -1,4 +1,4 @@
-package eu.somatik.glossitope.marblesolitare;
+package eu.somatik.glossitope.marblesolitaire;
 
 import java.applet.Applet;
 import java.awt.event.KeyEvent;

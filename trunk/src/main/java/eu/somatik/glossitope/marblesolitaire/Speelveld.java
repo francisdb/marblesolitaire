@@ -1,4 +1,4 @@
-package eu.somatik.glossitope.marblesolitare;
+package eu.somatik.glossitope.marblesolitaire;
 
 import java.awt.Graphics2D;
 import java.awt.BasicStroke;
