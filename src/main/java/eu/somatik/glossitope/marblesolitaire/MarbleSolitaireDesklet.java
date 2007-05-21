@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package eu.somatik.glossitope.marblesolitare;
+package eu.somatik.glossitope.marblesolitaire;
 
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
