@@ -94,13 +94,17 @@ public class SolitairePanel extends JPanel{
         repaint();
     }
     
+    /**
+     * 
+     * @param e 
+     */
     public void doMouseClick(MouseEvent e){
-        System.out.println("click");
+        System.out.println(e.getClickCount());
         speelVeld.doMouseClick(e);
         repaint();
-        System.out.println("Balls left: " + speelVeld.checkBallsLeft());
-        if(speelVeld.checkGameOver())
+        if(speelVeld.checkGameOver()){
             gameOver();
+        }
         
     }
     

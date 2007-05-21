@@ -54,7 +54,7 @@ public class Speelveld {
         veld= tempVeld;
         cursorX=3;
         cursorY=3;
-        selected=false;  
+        selected=false;
     }
     
     public int[][] getVeld(){
@@ -111,6 +111,7 @@ public class Speelveld {
     }
     
     public void doMouseMove(MouseEvent e){
+        
         int newCursorX=(e.getX()-OFFSET)/40;
         if (newCursorX<0){
             newCursorX=0;
@@ -129,16 +130,21 @@ public class Speelveld {
             cursorX=newCursorX;
             cursorY=newCursorY;
         }
+        
     }
     
     public void doMouseClick(MouseEvent e){
-        if (!selected&&veld[cursorX][cursorY]==this.BALL) {
-            selectedX=cursorX;
-            selectedY=cursorY;
-            selected=true;
-        } else{
-            checkMove(selectedX,selectedY,cursorX,cursorY);
-            selected=false;
+        if(e.getClickCount() == 1){
+            if (!selected&&veld[cursorX][cursorY]==this.BALL) {
+                selectedX=cursorX;
+                selectedY=cursorY;
+                selected=true;
+            } else{
+                checkMove(selectedX,selectedY,cursorX,cursorY);
+                selected=false;
+            }
+        }else if (e.getClickCount() == 2){
+            reset();
         }
     }
     
