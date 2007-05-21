@@ -78,7 +78,7 @@ public class SolitairePanel extends JPanel{
                 }
             }
         });
-        this.setPreferredSize(new Dimension(400,400));
+        this.setPreferredSize(new Dimension(300,300));
     }
     
     public void doKey(KeyEvent e){
