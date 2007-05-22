@@ -54,6 +54,7 @@ public class SolitairePanel extends JPanel{
     }
     
     private void initGUI(){
+        this.setOpaque(false);
         addKeyListener(
                 new KeyAdapter(){
             public void keyReleased(KeyEvent e){
